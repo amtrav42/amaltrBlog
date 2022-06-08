@@ -7,8 +7,8 @@ const prismicConfig = require('./prismic-configuration')
 
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby Prismic Blog',
-    description: 'Blog example for Gatsby & Prismic',
+    title: 'Amaltr Dev',
+    description: 'Thoughts from Amelia in blog form',
   },
   plugins: [
     {
@@ -51,6 +51,22 @@ module.exports = {
       options: {
         name: 'images',
         path: path.resolve(__dirname, 'src', 'images'),
+      },
+    },
+    {
+      resolve: `gatsby-plugin-google-gtag`,
+      options: {
+        // You can add multiple tracking ids and a pageview event will be fired for all of them.
+        trackingIds: [
+          "G-CZQBFXGK9H", // Google Analytics / GA
+        ],
+        // This object gets passed directly to the gtag config command
+        // This config will be shared across all trackingIds
+        gtagConfig: {
+          optimize_id: "OPT_CONTAINER_ID",
+          anonymize_ip: true,
+          cookie_expires: 0,
+        },
       },
     },
   ],
